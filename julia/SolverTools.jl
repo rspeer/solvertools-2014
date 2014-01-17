@@ -258,6 +258,7 @@ end
 
 # ### Frequency statistics
 function interpret_text(wordlist::Wordlist, text::String)
+    text = remove_spaces(text)
     best_partial_results = UTF8String[]
     best_partial_logprob = Float64[]
     indexes = [chr2ind(text, chr) for chr=1:length(text)]
